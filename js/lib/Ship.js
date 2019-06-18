@@ -24,7 +24,6 @@ class Ship extends Particle {
 
     // hitbox
     this.hitbox = this._generateHitbox();
-    console.log('%c hitbox init %O', 'font-size: large;', this.hitbox);
   }
 
   get paths() {

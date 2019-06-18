@@ -8,6 +8,8 @@ window.addEventListener('load', function() {
     let height = canvas.height = window.innerHeight;
     const cx = width / 2, cy = height / 2;
 
+    const fpsCounter = new FPSCounter({view: ctx});
+
     window.DOM = {
       logs: document.getElementsByClassName('log')
     };
@@ -106,6 +108,8 @@ window.addEventListener('load', function() {
       }
 
       drawShip(ship);
+
+      fpsCounter.update();
 
       debrisCollection.forEach(debris => {
         drawDebris(debris);
