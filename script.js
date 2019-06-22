@@ -8,7 +8,7 @@ window.addEventListener('load', function() {
     let height = canvas.height = window.innerHeight;
     const cx = width / 2, cy = height / 2;
 
-    const fpsCounter = new FPSCounter({view: ctx});
+    const fpsCounter = new FPSCounter({view: ctx, throttleInterval: 1000});
 
     window.DOM = {
       logs: document.getElementsByClassName('log')
@@ -139,7 +139,7 @@ window.addEventListener('load', function() {
         ctx.lineWidth = subpath.lineWidth;
         ctx.beginPath();
         ctx.fill(subpath.path);
-      })
+      });
       ctx.beginPath();
       ctx.arc(0, 0, debris.radius, 0, 2 * Math.PI);
       ctx.stroke();
